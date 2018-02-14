@@ -15,4 +15,19 @@ var listAccounts = function() {
   });
 }
 
+var transfer = function(from, to, amountWei) {
+  transaction = { from: from, to: to, value: amountWei };
+  return web3.eth.sendTransaction(transaction);
+}
+
+listAccounts();
+
+var hash = transfer(
+  web3.eth.accounts[8], 
+  web3.eth.accounts[9], 
+  web3.toWei('1', 'ether')
+);
+
+console.log("Transfer hash: " + JSON.stringify(web3.eth.getTransaction(hash)));
+
 listAccounts();
