@@ -11,6 +11,10 @@ obj
 packages
 *.suo
 
+#contract binaries
+*.abi
+*.bin
+
 # Docker
 Dockerfile
 docker-compose.yml
